@@ -44,17 +44,11 @@ Player* PlayerManager::getPlayerByName(std::string name)
     }
     return 0;
 }
-void PlayerManager::showPlayerInfo(uint16_t id)
+void PlayerManager::showPlayerInfo(Player* player)
 {
-    Player* player = getPlayerById(id);
-    if(player)
-    {
-        std::cout << "==========";
-        std::cout << "\nName: " << player->getName();
-        std::cout << "\nId: " << player->getId();
-        std::cout << "\nRank: " << player->getRank();
-        std::cout << "\n==========";
-        return;
-    }
-    std::cout << "Player with id " << id << " not found!\n";
+    std::cout << "==========";
+    std::cout << "\nName: " << player->getName();
+    std::cout << "\nId: " << player->getId();
+    std::cout << "\nRank: " << player->getRank();
+    std::cout << "\n==========\n";
 }
