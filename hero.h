@@ -1,3 +1,6 @@
+#ifndef HERO
+#define HERO
+
 #include <string>
 
 class Hero
@@ -16,3 +19,5 @@ public:
     uint16_t getHp();
     uint16_t getDamage();
 };
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef TEAM
+#define TEAM
+
 #include "playerManager.h"
 #include "heroManager.h"
 #include <optional>
@@ -17,3 +20,5 @@ public:
     bool removePlayer(uint16_t id);
     std::optional<std::pair<Player, Hero>> getPlayerByIndex(int index);
 };
+
+#endif

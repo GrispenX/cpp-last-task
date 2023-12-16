@@ -1,3 +1,6 @@
+#ifndef HERO_MANAGER
+#define HERO_MANAGER
+
 #include "hero.h"
 #include <vector>
 #include <optional>
@@ -16,3 +19,5 @@ public:
     std::optional<Hero> getHeroByName(std::string name);
     void showHeroInfo(Hero* hero);
 };
+
+#endif

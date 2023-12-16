@@ -1,3 +1,6 @@
+#ifndef PLAYER_MANAGER
+#define PLAYER_MANAGER
+
 #include "player.h"
 #include <vector>
 #include <optional>
@@ -16,3 +19,5 @@ public:
     std::optional<Player> getPlayerByName(std::string name);
     void showPlayerInfo(Player* player);
 };
+
+#endif
