@@ -3,10 +3,10 @@
 
 uint16_t PlayerManager::genId() {return next_id++;}
 
-Player* PlayerManager::CreatePlayer(std::string name)
+Player PlayerManager::CreatePlayer(std::string name)
 {
     playerList.push_back(Player(genId(), name));
-    return &playerList.back();
+    return playerList.back();
 }
 
 bool PlayerManager::DeletePlayer(uint16_t id)
@@ -22,27 +22,27 @@ bool PlayerManager::DeletePlayer(uint16_t id)
     return false;
 }
 
-Player* PlayerManager::getPlayerById(uint16_t id)
+std::optional<Player> PlayerManager::getPlayerById(uint16_t id)
 {
     for(int i = 0; i < playerList.size(); i++)
     {
         if(playerList[i].getId() == id)
         {
-            return &playerList[i];
+            return playerList[i];
         }
     }
-    return 0;
+    return std::nullopt;
 }
-Player* PlayerManager::getPlayerByName(std::string name)
+std::optional<Player> PlayerManager::getPlayerByName(std::string name)
 {
     for(int i = 0; i < playerList.size(); i++)
     {
         if(playerList[i].getName() == name)
         {
-            return &playerList[i];
+            return playerList[i];
         }
     }
-    return 0;
+    return std::nullopt;
 }
 void PlayerManager::showPlayerInfo(Player* player)
 {
