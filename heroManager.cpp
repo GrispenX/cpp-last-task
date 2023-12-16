@@ -1,4 +1,5 @@
 #include "heroManager.h"
+#include <iostream>
 
 uint16_t HeroManager::genId() {return next_id++;}
 
@@ -41,4 +42,14 @@ Hero* HeroManager::getHeroByName(std::string name)
         }
     }
     return 0;
+}
+
+void HeroManager::showHeroInfo(Hero* hero)
+{
+    std::cout << "==========";
+    std::cout << "\nName: " << hero->getName();
+    std::cout << "\nId: " << hero->getId();
+    std::cout << "\nHP: " << hero->getHp();
+    std::cout << "\nDamage: " << hero->getDamage();
+    std::cout << "\n==========\n";
 }
