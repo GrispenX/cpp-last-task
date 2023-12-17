@@ -25,7 +25,7 @@ std::string pnamelist[20] =
     "noname"
 };
 
-std::string hmanelist[20] =
+std::string hnamelist[20] =
 {
     "Anti-Mage",
     "Axe",

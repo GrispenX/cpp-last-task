@@ -11,7 +11,7 @@ Player PlayerManager::CreatePlayer(std::string name)
 
 bool PlayerManager::DeletePlayer(uint16_t id)
 {
-    for(int i = 0; i < playerList.size(); i++)
+    for(long unsigned int i = 0; i < playerList.size(); i++)
     {
         if(playerList[i].getId() == id)
         {
@@ -24,7 +24,7 @@ bool PlayerManager::DeletePlayer(uint16_t id)
 
 std::optional<Player> PlayerManager::getPlayerById(uint16_t id)
 {
-    for(int i = 0; i < playerList.size(); i++)
+    for(long unsigned int i = 0; i < playerList.size(); i++)
     {
         if(playerList[i].getId() == id)
         {
@@ -35,7 +35,7 @@ std::optional<Player> PlayerManager::getPlayerById(uint16_t id)
 }
 std::optional<Player> PlayerManager::getPlayerByName(std::string name)
 {
-    for(int i = 0; i < playerList.size(); i++)
+    for(long unsigned int i = 0; i < playerList.size(); i++)
     {
         if(playerList[i].getName() == name)
         {

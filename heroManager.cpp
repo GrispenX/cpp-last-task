@@ -10,7 +10,7 @@ Hero HeroManager::CreateHero(std::string name, uint16_t hp, uint16_t damage)
 }
 bool HeroManager::DeleteHero(uint16_t id)
 {
-    for(int i = 0; i < heroList.size(); i++)
+    for(long unsigned int i = 0; i < heroList.size(); i++)
     {
         if(heroList[i].getId() == id)
         {
@@ -23,7 +23,7 @@ bool HeroManager::DeleteHero(uint16_t id)
 
 std::optional<Hero> HeroManager::getHeroById(uint16_t id)
 {
-    for(int i = 0; i < heroList.size(); i++)
+    for(long unsigned int i = 0; i < heroList.size(); i++)
     {
         if(heroList[i].getId() == id)
         {
@@ -34,7 +34,7 @@ std::optional<Hero> HeroManager::getHeroById(uint16_t id)
 }
 std::optional<Hero> HeroManager::getHeroByName(std::string name)
 {
-    for(int i = 0; i < heroList.size(); i++)
+    for(long unsigned int i = 0; i < heroList.size(); i++)
     {
         if(heroList[i].getName() == name)
         {
