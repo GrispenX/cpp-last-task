@@ -1,3 +1,6 @@
+#ifndef PLAYER
+#define PLAYER
+
 #include <string>
 
 class Player
@@ -14,3 +17,5 @@ public:
     std::string getName();
     uint16_t getRank();
 };
+
+#endif
