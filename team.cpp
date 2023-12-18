@@ -1,9 +1,8 @@
 #include "team.h"
 
-Team::Team(std::string name)
-{
-    m_name = name;
-}
+Team::Team(std::string name) {m_name = name;}
+
+std::string Team::getName() {return m_name;}
 
 bool Team::addPlayer(Player player, Hero hero)
 {

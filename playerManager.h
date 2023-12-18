@@ -17,7 +17,7 @@ public:
 
     std::optional<Player> getPlayerById(uint16_t id);
     std::optional<Player> getPlayerByName(std::string name);
-    void showPlayerInfo(Player* player);
+    void showPlayerInfo(Player player);
 };
 
 #endif

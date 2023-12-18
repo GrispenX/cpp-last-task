@@ -44,11 +44,11 @@ std::optional<Player> PlayerManager::getPlayerByName(std::string name)
     }
     return std::nullopt;
 }
-void PlayerManager::showPlayerInfo(Player* player)
+void PlayerManager::showPlayerInfo(Player player)
 {
-    std::cout << "==========";
-    std::cout << "\nName: " << player->getName();
-    std::cout << "\nId: " << player->getId();
-    std::cout << "\nRank: " << player->getRank();
+    std::cout << "==PLAYER==";
+    std::cout << "\nName: " << player.getName();
+    std::cout << "\nId: " << player.getId();
+    std::cout << "\nRank: " << player.getRank();
     std::cout << "\n==========\n";
 }
