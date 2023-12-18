@@ -44,12 +44,12 @@ std::optional<Hero> HeroManager::getHeroByName(std::string name)
     return std::nullopt;
 }
 
-void HeroManager::showHeroInfo(Hero* hero)
+void HeroManager::showHeroInfo(Hero hero)
 {
-    std::cout << "==========";
-    std::cout << "\nName: " << hero->getName();
-    std::cout << "\nId: " << hero->getId();
-    std::cout << "\nHP: " << hero->getHp();
-    std::cout << "\nDamage: " << hero->getDamage();
-    std::cout << "\n==========\n";
+    std::cout << "===HERO===" << std::endl;
+    std::cout << "Name: " << hero.getName() << std::endl;
+    std::cout << "Id: " << hero.getId() << std::endl;
+    std::cout << "HP: " << hero.getHp() << std::endl;
+    std::cout << "Damage: " << hero.getDamage() << std::endl;
+    std::cout << "==========" << std::endl;
 }

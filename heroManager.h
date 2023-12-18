@@ -17,7 +17,7 @@ public:
 
     std::optional<Hero> getHeroById(uint16_t id);
     std::optional<Hero> getHeroByName(std::string name);
-    void showHeroInfo(Hero* hero);
+    void showHeroInfo(Hero hero);
 };
 
 #endif
