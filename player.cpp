@@ -13,3 +13,5 @@ Player::Player(uint16_t id, std::string name)
 uint16_t Player::getId() {return m_id;}
 std::string Player::getName() {return m_name;}
 uint16_t Player::getRank() {return m_rank;}
+
+void Player::changeRank(int rank) {m_rank += rank;}

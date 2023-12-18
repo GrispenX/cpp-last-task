@@ -16,6 +16,8 @@ public:
     uint16_t getId();
     std::string getName();
     uint16_t getRank();
+
+    void changeRank(int rank);
 };
 
 #endif
