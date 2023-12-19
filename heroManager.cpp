@@ -3,7 +3,7 @@
 
 uint16_t HeroManager::genId() {return next_id++;}
 
-Hero HeroManager::CreateHero(std::string name, uint16_t hp, uint16_t damage)
+Hero& HeroManager::CreateHero(std::string name, uint16_t hp, uint16_t damage)
 {
     heroList.push_back(Hero(genId(), name, hp, damage));
     return heroList.back();
@@ -21,7 +21,7 @@ bool HeroManager::DeleteHero(uint16_t id)
     return false;
 }
 
-std::optional<Hero> HeroManager::getHeroById(uint16_t id)
+Hero& HeroManager::getHeroById(uint16_t id)
 {
     for(long unsigned int i = 0; i < heroList.size(); i++)
     {
@@ -30,9 +30,9 @@ std::optional<Hero> HeroManager::getHeroById(uint16_t id)
             return heroList[i];
         }
     }
-    return std::nullopt;
+    throw std::runtime_error("Hero with id " + std::to_string(id) + " not found");
 }
-std::optional<Hero> HeroManager::getHeroByName(std::string name)
+Hero& HeroManager::getHeroByName(std::string name)
 {
     for(long unsigned int i = 0; i < heroList.size(); i++)
     {
@@ -41,7 +41,7 @@ std::optional<Hero> HeroManager::getHeroByName(std::string name)
             return heroList[i];
         }
     }
-    return std::nullopt;
+    throw std::runtime_error("Hero with name " + name + " not found");
 }
 
 void HeroManager::showHeroInfo(Hero hero)
