@@ -1,4 +1,5 @@
 #include "team.h"
+#include <iostream>
 
 Team::Team(std::string name) {m_name = name;}
 
@@ -42,7 +43,21 @@ bool Team::removePlayer(uint16_t id)
     }
     return false;
 }
-std::optional<std::pair<Player, Hero>> Team::getPlayerByIndex(int index)
+std::pair<Player, Hero> Team::getPlayerByIndex(int index)
 {
-    return team[index];
+    if(team[index].has_value())
+    {
+        return team[index].value();
+    }
+    throw std::runtime_error("There isn't player by index " + std::to_string(index));
+}
+
+bool Team::removePlayer(uint index)
+{
+    if(team[index].has_value())
+    {
+        team[index].reset();
+        return true;
+    }
+    return false;
 }

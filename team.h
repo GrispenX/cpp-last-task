@@ -12,7 +12,6 @@ class Team
 private:
     std::string m_name;
     std::optional<std::pair<Player, Hero>> team[TEAM_SIZE];
-    uint16_t m_id;
 public:
     Team() = delete;
     Team(std::string name);
@@ -21,7 +20,8 @@ public:
 
     bool addPlayer(Player player, Hero hero);
     bool removePlayer(uint16_t id);
-    std::optional<std::pair<Player, Hero>> getPlayerByIndex(int index);
+    bool removePlayer(uint index);
+    std::pair<Player, Hero> getPlayerByIndex(int index);
 };
 
 #endif
