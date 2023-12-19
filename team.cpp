@@ -28,7 +28,7 @@ bool Team::addPlayer(Player player, Hero hero)
     return false;
 }
 
-bool Team::removePlayer(uint16_t id)
+bool Team::removePlayerById(uint16_t id)
 {
     for(int i = 0; i < TEAM_SIZE; i++)
     {
@@ -52,12 +52,15 @@ std::pair<Player, Hero> Team::getPlayerByIndex(int index)
     throw std::runtime_error("There isn't player by index " + std::to_string(index));
 }
 
-bool Team::removePlayer(uint index)
+bool Team::removePlayerByIndex(uint16_t index)
 {
-    if(team[index].has_value())
+    if(index < TEAM_SIZE)
     {
-        team[index].reset();
-        return true;
+        if(team[index].has_value())
+        {
+            team[index].reset();
+            return true;
+        }
     }
     return false;
 }

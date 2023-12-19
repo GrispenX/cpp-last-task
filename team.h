@@ -19,8 +19,8 @@ public:
     std::string getName();
 
     bool addPlayer(Player player, Hero hero);
-    bool removePlayer(uint16_t id);
-    bool removePlayer(uint index);
+    bool removePlayerById(uint16_t id);
+    bool removePlayerByIndex(uint16_t index);
     std::pair<Player, Hero> getPlayerByIndex(int index);
 };
 
