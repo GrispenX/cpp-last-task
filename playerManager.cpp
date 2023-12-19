@@ -3,7 +3,7 @@
 
 uint16_t PlayerManager::genId() {return next_id++;}
 
-Player PlayerManager::CreatePlayer(std::string name)
+Player& PlayerManager::CreatePlayer(std::string name)
 {
     playerList.push_back(Player(genId(), name));
     return playerList.back();
@@ -22,7 +22,7 @@ bool PlayerManager::DeletePlayer(uint16_t id)
     return false;
 }
 
-std::optional<Player> PlayerManager::getPlayerById(uint16_t id)
+Player& PlayerManager::getPlayerById(uint16_t id)
 {
     for(long unsigned int i = 0; i < playerList.size(); i++)
     {
@@ -31,9 +31,9 @@ std::optional<Player> PlayerManager::getPlayerById(uint16_t id)
             return playerList[i];
         }
     }
-    return std::nullopt;
+    throw std::runtime_error("Player with id " + std::to_string(id) + " not found");
 }
-std::optional<Player> PlayerManager::getPlayerByName(std::string name)
+Player& PlayerManager::getPlayerByName(std::string name)
 {
     for(long unsigned int i = 0; i < playerList.size(); i++)
     {
@@ -42,7 +42,7 @@ std::optional<Player> PlayerManager::getPlayerByName(std::string name)
             return playerList[i];
         }
     }
-    return std::nullopt;
+    throw std::runtime_error("Player with name " + name + " not found");
 }
 void PlayerManager::showPlayerInfo(Player player)
 {

@@ -1,23 +1,23 @@
 #include "teamManager.h"
 #include <iostream>
 
-Team* TeamManager::getTeamByName(std::string name)
+Team& TeamManager::getTeamByName(std::string name)
 {
     for(long unsigned int i = 0; i < teamList.size(); i++)
     {
-        if(teamList[i].getName() == name) {return &teamList[i];}
+        if(teamList[i].getName() == name) {return teamList[i];}
     }
-    return nullptr;
+    throw std::runtime_error("Team with name " + name + " not found");
 }
 
-Team* TeamManager::generateNewteam(std::string name)
+Team& TeamManager::generateNewteam(std::string name)
 {
     for(auto it = teamList.begin(); it != teamList.end(); it++)
     {
-        if(it->getName() == name) {return nullptr;}
+        if(it->getName() == name) {throw std::runtime_error("Team with name " + name + " already exist");}
     }
     teamList.push_back(Team(name));
-    return &teamList[teamList.size() - 1];
+    return teamList[teamList.size() - 1];
 }
 
 bool TeamManager::deleteTeam(std::string name)
