@@ -43,6 +43,15 @@ Hero& HeroManager::getHeroByName(std::string name)
     }
     throw std::runtime_error("Hero with name " + name + " not found");
 }
+Hero& HeroManager::getHeroByIndex(uint64_t index)
+{
+    if(index < heroList.size())
+    {
+        return heroList[index];
+    }
+    throw std::runtime_error("Hero by index " + std::to_string(index) + " not found");
+}
+uint64_t HeroManager::getListSize() {return heroList.size();}
 
 void HeroManager::showHeroInfo(Hero hero)
 {

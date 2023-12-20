@@ -17,6 +17,8 @@ public:
 
     Player& getPlayerById(uint16_t id);
     Player& getPlayerByName(std::string name);
+    Player& getPlayerByIndex(uint64_t index);
+    uint64_t getListSize();
     void showPlayerInfo(Player player);
 };
 

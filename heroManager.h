@@ -17,6 +17,8 @@ public:
 
     Hero& getHeroById(uint16_t id);
     Hero& getHeroByName(std::string name);
+    Hero& getHeroByIndex(uint64_t index);
+    uint64_t getListSize();
     void showHeroInfo(Hero hero);
 };
 

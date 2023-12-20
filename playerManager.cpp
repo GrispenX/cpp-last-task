@@ -44,6 +44,15 @@ Player& PlayerManager::getPlayerByName(std::string name)
     }
     throw std::runtime_error("Player with name " + name + " not found");
 }
+Player& PlayerManager::getPlayerByIndex(uint64_t index)
+{
+    if(index < playerList.size())
+    {
+        return playerList[index];
+    }
+    throw std::runtime_error("Player by index " + std::to_string(index) + " not found");
+}
+uint64_t PlayerManager::getListSize() {return playerList.size();}
 void PlayerManager::showPlayerInfo(Player player)
 {
     std::cout << "==PLAYER==";
