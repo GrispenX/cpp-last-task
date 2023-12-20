@@ -11,13 +11,16 @@ private:
     Team m_teamOne;
     Team m_teamTwo;
     Team* m_winner;
+    Team* m_loser;
 public:
     Session() = delete;
     Session(Team teamOne, Team teamTwo);
 
     Team getTeamOne();
     Team getTeamTwo();
-    Team* claculateWinner();
+    Team* getWinner();
+    Team* getLoser();
+    void claculateWinner();
 };
 
 #endif

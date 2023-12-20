@@ -8,9 +8,20 @@ class GameManager
 {
 private:
     std::vector<Session> sessionList;
+    PlayerManager m_pmanager;
+    HeroManager m_hmanager;
+    TeamManager m_tmanager;
 public:
-    void PerformGameSession(Team team1, Team team2, PlayerManager& pmanager);
-    Session getSessionList(uint64_t index);
+    GameManager(PlayerManager pmanager);
+    GameManager(HeroManager hmanager);
+    GameManager(PlayerManager pmanager, HeroManager hmanager);
+
+    PlayerManager& getPManager();
+    HeroManager& getHManager();
+    // TeamManager& getTManager();
+
+    void PerformGameSession();
+    Session getSessionByIndex(uint64_t index);
 };
 
 #endif

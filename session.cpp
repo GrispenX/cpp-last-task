@@ -9,7 +9,7 @@ Session::Session(Team teamOne, Team teamTwo) : m_teamOne(teamOne), m_teamTwo(tea
 
 Team Session::getTeamOne() {return m_teamOne;}
 Team Session::getTeamTwo() {return m_teamTwo;}
-Team* Session::claculateWinner()
+void Session::claculateWinner()
 {
     uint32_t teamOneHP = 0, teamOneDamage = 0, teamTwoHP = 0, teamTwoDamage = 0;
     for(int i = 0; i < TEAM_SIZE; i++)
@@ -44,16 +44,19 @@ Team* Session::claculateWinner()
     if(teamOneHP > teamTwoHP)
     {
         m_winner = &m_teamOne;
-        return &m_teamOne;
+        m_loser = &m_teamTwo;
     }
     else if(teamTwoHP > teamOneHP)
     {
         m_winner = &m_teamTwo;
-        return &m_teamTwo;
+        m_loser = &m_teamOne;
     }
     else
     {
         m_winner = nullptr;
-        return nullptr;
+        m_loser = nullptr;
     }
 }
+
+Team* Session::getWinner() {return m_winner;}
+Team* Session::getLoser() {return m_loser;}
