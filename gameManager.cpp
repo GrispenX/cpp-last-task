@@ -47,7 +47,7 @@ void GameManager::PerformGameSession(Team team1, Team team2, PlayerManager& pman
     sessionList.push_back(session);
 }
 
-Session& GameManager::getSessionList()
+Session GameManager::getSessionList(uint64_t index)
 {
-    return sessionList.back();
+    return sessionList[index];
 }

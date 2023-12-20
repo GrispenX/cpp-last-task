@@ -2,15 +2,15 @@
 #define GAME_MANAGER
 
 #include "session.h"
-#include <list>
+#include <vector>
 
 class GameManager
 {
 private:
-    std::list<Session> sessionList;
+    std::vector<Session> sessionList;
 public:
     void PerformGameSession(Team team1, Team team2, PlayerManager& pmanager);
-    Session& getSessionList();
+    Session getSessionList(uint64_t index);
 };
 
 #endif
