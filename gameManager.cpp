@@ -59,8 +59,8 @@ void GameManager::PerformGameSession()
     {
         for(int i = 0; i < TEAM_SIZE; i++)
         {
-            sessionList.back().getWinner()->getPlayerByIndex(i).first.changeRank(25);
-            sessionList.back().getLoser()->getPlayerByIndex(i).first.changeRank(-25);
+            m_pmanager.getPlayerById(sessionList.back().getWinner()->getPlayerByIndex(i).first.getId()).changeRank(25);
+            m_pmanager.getPlayerById(sessionList.back().getLoser()->getPlayerByIndex(i).first.getId()).changeRank(-25);
         }
         std::cout << "Team " << sessionList.back().getWinner()->getName() << " win!" << std::endl;
     }

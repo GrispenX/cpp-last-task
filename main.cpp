@@ -13,4 +13,6 @@ int main()
     }
     GameManager game(pmanager, hmanager);
     game.PerformGameSession();
+    game.getPManager().showPlayerInfo(game.getPManager().getPlayerById(game.getSessionByIndex(0).getWinner()->getPlayerByIndex(0).first.getId()));
+    game.getPManager().showPlayerInfo(game.getPManager().getPlayerById(game.getSessionByIndex(0).getLoser()->getPlayerByIndex(0).first.getId()));
 }
